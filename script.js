@@ -1,7 +1,7 @@
 const inputBox= document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
-//function to add task
+// function to add task
 function addTask(){
     if (inputBox.value === ''){
         alert("You must write something!");
@@ -42,3 +42,15 @@ function showTask() {
 }
 
 showTask();
+
+const taskList = document.getElementById('taskList');
+
+// Event listener for the "ADD" button
+addButton.addEventListener('click', addTask);
+
+// Event listener for pressing "Enter" key
+inputBox.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+});
