@@ -1,95 +1,130 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.container{
-    width: 100%;
+.container {
+    width: 100vw;
     min-height: 100vh;
     background: linear-gradient(135deg, #D6CFB4, #D39D55);
-    padding: 10px;
+    position: fixed;
+    z-index: -1;
 }
 
-.todo-app{
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
+.todo-app {
+    width: 500px;
 
-    width: 100%;
-    max-width: 540px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+
     background-color: white;
 
-    border-radius: 10px;
+    padding: 30px 22px 18px 22px;
+    border-radius: 15px;
 }
 
-.todo-app h2{
-    margin-bottom: 20px;
-    display: flex;
-
-    color: #8D0B41;
-    align-items: center;
-}
-
-.todo-app h2 img{
-    width: 30px;
-    margin-left: 10px;
-}
-
-.row{
-    padding-left: 20px;
+.todo-app h2 {
     margin-bottom: 25px;
-    
+    display: flex;
+    text-transform: uppercase;
+
+    color: black;
+
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
 
+.todo-app h2 img {
+    width: 30px;
+    height: 30px;
+}
+
+.input-container {
+    min-height: fit-content;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: #edeef0;
-    border-radius: 30px;
+    gap: 0px;
+
+    width: 100%;
 }
 
-input{
-    padding: 10px;
-    flex: 1;
-
+input {
+    width: 100%;
+    height: 60px;
     border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+
+    background: #f1f1f18c;
     outline: none;
-    background: transparent;
+    padding: 16px;
+    font-size: 16px;
 }
 
-button{
-    padding: 16px 50px;
+input::placeholder {
+    color: rgba(0, 0, 0, 0.321);
+    font-size: 16px;
+}
 
+button {
+    height: 60px;
+    padding: 10px 20px;
     border: none;
-    outline: none;
 
     background: #FF643B;
     color: #fff;
 
     font-size: 16px;
-    cursor: pointer;
 
-    border-radius: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    user-select: none;
 }
 
-ul li{
+ul li {
     position: relative;
 
-    padding: 12px 8px 12px 50px;
+    padding: 12px 12px 12px 42px;
 
     list-style: none;
-    font-size: 17px;
+    font-size: 16px;
 
     user-select: none;
     cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 5px;
+
+    /* stop text from getting out of the container - not a good solution though */
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    background: #f9f9f9;
+    transition: background 0.3s ease-in-out;
 }
 
-ul li::before{
+ul li:hover {
+    background: #efefef;
+}
+
+ul li::before {
     position: absolute;
     content: '';
 
-    height: 28px;
-    width: 28px;
+    height: 20px;
+    width: 20px;
 
     border-radius: 50%;
 
@@ -97,37 +132,47 @@ ul li::before{
     background-size: cover;
     background-position: center;
 
-    top: 12px;
-    left: 8px;
+    left: 22px;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-ul li.checked{
-    color: #555;
+ul li.checked {
+    color: #00000079;
     text-decoration: line-through;
 }
 
-ul li.checked::before{
+ul li.checked::before {
     background-image: url(assets/checked.png);
 }
 
-ul li span{
+ul li span {
     position: absolute;
 
-    right: 0;
-    top: 5px;
+    left: 97.5%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
-    width:40px;
+    width: 40px;
     height: 40px;
-    
-    font-size: 22px;
-    color: #555;
+
+    font-size: 25px;
+    font-weight: lighter;
+    color: red;
 
     line-height: 40px;
-    text-align: center;
-
-    border-radius: 50%;
+    border-radius: 7px;
 }
 
-ul li span:hover{
-    background: #edeef0;
+/* for mobile and tablet */
+@media screen and (max-width: 768px) {
+    .todo-app {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .todo-app {
+        width: 90%;
+    }
 }
