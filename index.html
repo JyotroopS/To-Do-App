@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZenTasks</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>To Do App</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
 
+         <h2>ZenTasks <lord-icon
+            src="https://cdn.lordicon.com/qvanfbgx.json"
+            trigger="loop"
+            delay="2000"
+            state="hover-unfold"
+            colors="primary:#ff643b,secondary:#000000"
+            style="width:32px;height:32px">
+        </lord-icon> </h2>
+         
 
-    <body>
-        <div class="container">
-            <div class="todo-app">
-                <h2>To Do List <img src="assets/icon.png"></h2>
-
-                <div class="input-container">
-                    <input type="text" id="input-box" placeholder="create a new task" />
-                    <button onclick="addTask()" id="addButton">Add</button>
-                </div>
-
-                <br>
-
-                <ul id="list-container">
-                    <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
-                </ul>
-
-
-            </div>
+        <div class="input-container">
+          <input type="text" id="input-box" placeholder="create a new task" />
+          <button onclick="addTask()" id="addButton">Add</button>
         </div>
 
-        <script src="script.js"></script>
-    </body>
+        <br />
 
+        <ul id="list-date">
+          <!-- <li>14 Jan, 2025</li> -->
+        </ul>
+
+        <ul id="list-container">
+          <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

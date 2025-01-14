@@ -10,9 +10,9 @@ function addTask () {
     li.innerHTML = inputBox.value
     listContainer.appendChild(li)
 
-    let span = document.createElement('span')
-    span.innerHTML = '\u00d7'
-    li.appendChild(span)
+    let cross = document.createElement('img')
+    cross.src = 'assets/remove.png'
+    li.appendChild(cross)
   }
 
   inputBox.value = ''
@@ -25,7 +25,7 @@ listContainer.addEventListener(
     if (e.target.tagName === 'LI') {
       e.target.classList.toggle('checked')
       saveData()
-    } else if (e.target.tagName === 'SPAN') {
+    } else if (e.target.tagName === 'IMG') {
       e.target.parentElement.remove()
       saveData()
     }
@@ -33,12 +33,12 @@ listContainer.addEventListener(
   false
 )
 
-// function to save data
+// // function to save data
 function saveData () {
   localStorage.setItem('data', listContainer.innerHTML)
 }
 
-// function to show previous data whenever the browser is opened
+// // function to show previous data whenever the browser is opened
 function showTask () {
   listContainer.innerHTML = localStorage.getItem('data')
 }

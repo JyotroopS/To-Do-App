@@ -93,7 +93,7 @@ button {
     user-select: none;
 }
 
-ul li {
+#list-container li {
     position: relative;
 
     padding: 12px 12px 12px 42px;
@@ -114,11 +114,11 @@ ul li {
     transition: background 0.3s ease-in-out;
 }
 
-ul li:hover {
+#list-container li:hover {
     background: #efefef;
 }
 
-ul li::before {
+#list-container li::before {
     position: absolute;
     content: '';
 
@@ -136,24 +136,24 @@ ul li::before {
     transform: translate(-50%, -50%);
 }
 
-ul li.checked {
+#list-container li.checked {
     color: #00000079;
     text-decoration: line-through;
 }
 
-ul li.checked::before {
+#list-container li.checked::before {
     background-image: url(assets/checked.png);
 }
 
-ul li span {
+#list-container li img {
     position: absolute;
 
-    left: 97.5%;
+    left: 95%;
     top: 50%;
     transform: translate(-50%, -50%);
 
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 
     font-size: 25px;
     font-weight: lighter;
